@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GREENBOX</title>
+  <link rel="stylesheet" type="text/css" href="../css/gioithieu.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <style>
+/* Info Grid */
+.info-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* Desktop */
+  gap: 25px;
+}
+.info-box {
+  background: #fff;
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
+}
+.info-box:hover {
+  transform: translateY(-5px);
+}
+.info-box h3 {
+  margin-bottom: 15px;
+  color: #2e7d32;
+  font-size: 20px;
+}
+.info-box p, .info-box ul {
+  font-size: 15px;
+  line-height: 1.6;
+  color: #444;
+}
+.info-box ul {
+  padding-left: 20px;
+}
+
+/* Responsive Info */
+@media (max-width: 992px) {
+  .info-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 768px) {
+  .info-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Team Section */
+/* ====== ĐỘI NGŨ ====== */
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); /* Tự co giãn */
+  gap: 20px;
+  justify-content: center;  /* Căn giữa ngang */
+  align-items: center;
+
+  max-width: 1200px;   /* Giới hạn chiều rộng */
+  margin: 50px auto;   /* Căn giữa toàn bộ grid */
+  padding: 30px;
+}
+
+.member {
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.member img {
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s ease;
+}
+
+.member img:hover {
+  transform: scale(1.08);
+}
+
+.member h3 {
+  font-size: 18px;
+  margin-top: 12px;
+  font-weight: 600;
+  color: #333;
+  padding: 30;
+}
+
+.member p {
+  font-size: 14px;
+  color: #666;
+}
+
+/* ====== Responsive cho điện thoại ====== */
+@media (max-width: 768px) {
+  .team-grid {
+    grid-template-columns: 1fr; /* 1 cột trên mobile */
+    padding: 30px;
+  }
+.member {
+    width: 300px;    /* Khung chứa to hơn */
+    height: 350px;
+  }
+  .member img {
+    width: 230px;  /* To hơn giống ảnh sản phẩm */
+    height: 230px;
+  }
+
+  .member h3 {
+    font-size: 20px;
+  }
+
+  .member p {
+    font-size: 15px;
+  }
+}
+</style>
+</head>
+
+<body>
+  <!-- Thanh xanh trên cùng -->
+  <div class="top-bar">
+    <div class="left">
+      <span>Hotline: <strong>1900 1177</strong></span>
+      <div class="top-right">
+      </div>
+    </div>
+  </div>
+
+  <!-- Header chính màu trắng -->
+  <header class="main-header">
+    <div class="logo-container">
+      <a href="../index.html">
+        <img src="../hinh/logo1.png" alt="VinhLong Tourism Logo" class="logo">
+      </a>
+      <a class="greenbox-link"><i>GREENBOX</i></a>
+    </div>
+    <!-- Nút menu ☰ chỉ hiển thị trên điện thoại -->
+    <button class="menudienthoai-toggle" onclick="toggleMenudienthoai()">☰</button>
+
+    <!-- Thanh menu -->
+    <nav id="nav-menu">
+      <a href="gioithieu.html" style="color: #3200fbff;"> <i class="fas fa-info-circle"></i> GIỚI THIỆU</a>
+      <a href="tintuc.html"><i class="fas fa-newspaper"></i> TIN TỨC</a>
+      <a href="lienhe.html"> <i class="fas fa-phone"></i> LIÊN HỆ</a>
+      <a href="timhieungay.html"> <i class="fas fa-search"></i> TÌM HIỂU NGAY</a>
+    </nav>
+  </header>
+  <!-- Section: Tầm nhìn - Sứ mệnh - Giá trị cốt lõi -->
+<section id="vision-mission-values-team" style="background: #f9fdf9; padding: 60px 20px;">
+  <div class="container">
+    <h2 class="section-title text-center mb-5">🌿 GreenBox – Tầm nhìn, Sứ mệnh & Giá trị cốt lõi</h2>
+
+    <div class="info-grid">
+      <!-- Tầm nhìn -->
+      <div class="info-box" style=" text-align: justify;">
+        <h3>🌱 Tầm nhìn</h3>
+        <p>Đến năm 2030, GreenBox trở thành mô hình tiên phong tại Việt Nam trong lĩnh vực thu hồi, tái sử dụng và tái chế bao bì thương mại điện tử, góp phần xây dựng một hệ sinh thái logistics xanh và thúc đẩy kinh tế tuần hoàn, hướng tới phát triển bền vững.</p>
+      </div>
+
+      <!-- Sứ mệnh -->
+      <div class="info-box" style=" text-align: justify;">
+        <h3>🌍 Sứ mệnh</h3>
+        <p>GreenBox mang sứ mệnh giảm thiểu rác thải bao bì từ thương mại điện tử thông qua việc xây dựng hệ thống thu gom, tái sử dụng và tái chế hộp carton một cách khoa học và hiệu quả. Chúng tôi cam kết tạo ra giá trị đồng thời cho môi trường, xã hội và kinh tế bằng cách kéo dài vòng đời bao bì, tiết kiệm tài nguyên và giảm phát thải CO₂. Đồng thời, GreenBox chú trọng nâng cao nhận thức cộng đồng, đặc biệt trong giới trẻ và sinh viên, khuyến khích lối sống xanh và hành vi tiêu dùng có trách nhiệm.</p>
+      </div>
+
+      <!-- Giá trị cốt lõi -->
+      <div class="info-box" style=" text-align: justify;">
+        <h3>🌟 Giá trị cốt lõi</h3>
+        <ul>
+          <li><b>Bền vững</b> (Sustainability)</li>
+          <li><b>Đổi mới</b> (Innovation)</li>
+          <li><b>Trách nhiệm</b> (Responsibility)</li>
+          <li><b>Kết nối</b> (Collaboration)</li>
+          <li><b>Lan tỏa</b> (Impact)</li>
+        </ul>
+      </div>
+
+      <!-- Đội ngũ -->
+      <div class="info-box" style=" text-align: justify;">
+        <h3>👥 Đội ngũ sáng lập</h3>
+        <p>GreenBox được sáng lập bởi nhóm trẻ đầy nhiệt huyết trong các lĩnh vực môi trường, logistics, công nghệ và truyền thông. Chúng tôi cùng chung tầm nhìn xây dựng hệ sinh thái logistics xanh và thúc đẩy kinh tế tuần hoàn.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Section: Đội ngũ sáng lập -->
+<h2 style="padding: 0 20px;">Đội Ngũ Sáng Lập</h2>
+<section class="team">
+  <div class="team-grid">
+    <div class="member">
+      <img src="../hinh/thao.png" alt="Member 1">
+      <h3>Lê Thị Thu Thảo</h3>
+      <p>CEO</p>
+    </div>
+    <div class="member">
+      <img src="../hinh/an.png" alt="Member 2">
+      <h3>Trần Nguyễn Khánh An</h3>
+      <p>CMO</p>
+    </div>
+    <div class="member">
+      <img src="../hinh/dung.png" alt="Member 3">
+      <h3>Nguyễn Ngọc Yến Vy</h3>
+      <p>CTO</p>
+    </div>
+    <div class="member">
+      <img src="../hinh/luan.png" alt="Member 4">
+      <h3>Phạm Thành Luân</h3>
+      <p>COO</p>
+    </div>
+  </div>
+</section>
+   
+
+  <!--footer cuối trang-->
+  <footer>
+    <div class="top"></div>
+    </div>
+    </div>
+    <div class="footer-container">
+      <div class="footer1">
+        <h6><strong>Giới thiệu GreenBox</strong></h6>
+        <p><strong>Tên công ty:</strong>GREENBOX</p>
+        <p><strong></strong>"Chúng tôi là đơn vị tiên phong trong thu gom, phân loại và tái sử dụng giấy tại Việt Nam. Sứ
+          mệnh của chúng tôi là giảm thiểu rác thải, tiết kiệm tài nguyên thiên nhiên và mang lại môi trường sống trong
+          lành cho các thế hệ mai sau."
+        </p>
+        <p>♻ Hơn <strong>5.000 tấn giấy</strong> được tái chế mỗi năm</p>
+        <p>🌳 Góp phần cứu <strong>85.000 cây xanh</strong> </p>
+        <p><strong>🔄 100% carton sau thu gom được xử lý an toàn & tái sử dụng</strong> </p>
+        <p>🤝 Hợp tác với <strong>doanh nghiệp, trường học, hộ gia đình</strong> để xây dựng thói quen phân loại và tái
+          chế </p>
+      </div>
+
+      <div class="footer2">
+        <h6><strong>Thông tin</strong></h6>
+        <p><strong>Địa chỉ trụ sở chính:</strong></p>
+        <p><strong>Nhà máy / Kho xử lý:</strong> bởi Sở KH&ĐT</p>
+        <p><strong>hotline 24/7:</strong> 0327378469 - 0368315830</p>
+        <p><strong>Email:</strong>greenbox.ct@gmail.com</p>
+        <p><strong>Giờ làm việc:</strong></p>
+      </div>
+
+      <div class="footer3">
+        <h6><strong>Chứng nhận & Tiêu chuẩn</strong></h6>
+        <p><strong>FSC: </strong> Nguồn giấy bền vững</p>
+        <p><strong>ISO 14001: </strong> Quản lý môi trường</p>
+        <p><strong>Nhãn xanh Việt Nam</strong></p>
+        <img src="../hinh/Nhanxanh.jpg" alt="Đã thông báo Bộ Công Thương" width="150">
+      </div>
+
+      <div class="footer4">
+        <h6><strong>Liên Hệ</strong></h6>
+        <p>Email: <strong> greenbox.ct@gmail.com</strong></p>
+        <p>Hotline: <strong>0327378469 - 0368315830</strong></p>
+        <p>Fanpage: <a href="#" target="_blank">Facebook</a></p>
+      </div>
+
+      <div class="footer5">
+        <h6>Đây là ô footer5 đã bị gộp với footer1</h6>
+        <p>Nội dung này sẽ không hiển thị vì đã bị gộp với footer1.</p>
+      </div>
+
+      <div class="footer6">
+        <h6>
+          <p><strong>Kết Nối Với Chúng Tôi</strong></p>
+        </h6>
+        <img src="../hinh/fb.jfif" width="50">
+        <img src="../hinh/ytb1.jfif" width="50">
+        <img src="../hinh/ggmap.jfif" width="50">
+      </div>
+
+      <div class="footer7">
+        <h6><strong>Dịch vụ tái chế</strong></h6>
+        <p>Thu gom tận nơi, phân loại carton, quy đổi điểm thưởng, tái chế an toàn.</p>
+      </div>
+
+      <div class="footer8">
+        <h6><strong>Ứng Dụng Di Động</strong></h6>
+        <img src="../hinh/gg play.jfif" width="70">
+        <img src="../hinh/app.jfif" width="70">
+      </div>
+    </div>
+  </footer>
+
+</body>
+<script>
+  function toggleMenudienthoai() {
+    var menu = document.getElementById("nav-menu");
+    menu.classList.toggle("nav-active");
+  }
+</script>
+
+</html>
+<script>
+  // Hiệu ứng khi cuộn xuống
+  const items = document.querySelectorAll('.animate');
+  window.addEventListener('scroll', () => {
+    items.forEach(item => {
+      const rect = item.getBoundingClientRect();
+      if (rect.top < window.innerHeight - 100) {
+        item.classList.add('show');
+      }
+    });
+  });
+</script>

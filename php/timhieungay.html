@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GREENBOX</title>
+    <link rel="stylesheet" type="text/css" href="../css/timhieungay.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+<body>
+  <!-- Thanh xanh trên cùng -->
+  <div class="top-bar">
+    <div class="left">
+      <span>Hotline: <strong>1900 1177</strong></span>
+      <div class="top-right">
+      </div>
+    </div>
+  </div>
+
+  <!-- Header chính màu trắng -->
+  <header class="main-header">
+    <div class="logo-container">
+      <a href="../index.html">
+        <img src="../hinh/logo1.png" alt="VinhLong Tourism Logo" class="logo">
+      </a>
+      <a class="greenbox-link"><i>GREENBOX</i></a>
+    </div>
+    <!-- Nút menu ☰ chỉ hiển thị trên điện thoại -->
+    <button class="menudienthoai-toggle" onclick="toggleMenudienthoai()">☰</button>
+
+    <!-- Thanh menu -->
+    <nav id="nav-menu">
+      <a href="gioithieu.html"> <i class="fas fa-info-circle"></i> GIỚI THIỆU</a>
+      <a href="tintuc.html"><i class="fas fa-newspaper"></i> TIN TỨC</a>
+      <a href="lienhe.html"> <i class="fas fa-phone"></i> LIÊN HỆ</a>
+      <a href="timhieungay.html" style="color: #3200fbff;"> <i class="fas fa-search"></i> TÌM HIỂU NGAY</a>
+    </nav>
+  </header>
+
+<section id="process" style="padding:60px 0; background:#f9fdf9;">
+  <div class="container" style="max-width:1000px; margin:auto;">
+    <h2 style="text-align:center; color:#2c7a3f; margin-bottom:40px;">♻ Quy trình GreenBox</h2>
+
+    <div class="row" style="text-align: justify;">
+      <!-- Bước 1 -->
+      <div class="col-md-6 mb-4">
+        <div style="background:#fff; border:1px solid #ddd; padding:20px; border-radius:12px; height:100%;">
+          <h4 style="color:#2c7a3f;"><i class="fas fa-box"></i> Bước 1: Thu hộp</h4>
+          <ul>
+            <li>Thu gom từ các shop online sinh viên sau khi giao hàng.</li>
+            <li>Thu gom từ khách hàng cá nhân trả lại hộp.</li>
+            <li>Thu mua từ các doanh nghiệp địa phương.</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Bước 2 -->
+      <div class="col-md-6 mb-4">
+        <div style="background:#fff; border:1px solid #ddd; padding:20px; border-radius:12px; height:100%;">
+          <h4 style="color:#2c7a3f;"><i class="fas fa-tasks"></i> Bước 2: Phân loại & xử lý</h4>
+          <ul>
+            <li>Mỗi hộp được gắn mã QR để theo dõi tình trạng & số lần sử dụng.</li>
+            <li>Hộp phân loại theo tình trạng: <b>Tốt</b>, <b>Trung bình</b>, <b>Kém</b>.</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Bước 3 -->
+      <div class="col-md-6 mb-4">
+        <div style="background:#fff; border:1px solid #ddd; padding:20px; border-radius:12px; height:100%;">
+          <h4 style="color:#2c7a3f;"><i class="fas fa-truck"></i> Bước 3: Phân phối hộp</h4>
+          <p>Hộp được phân phối lại cho các shop nội bộ hoặc shop sinh viên cần hộp giá rẻ.</p>
+        </div>
+      </div>
+
+      <!-- Bước 4 -->
+      <div class="col-md-6 mb-4">
+        <div style="background:#fff; border:1px solid #ddd; padding:20px; border-radius:12px; height:100%;">
+          <h4 style="color:#2c7a3f;"><i class="fas fa-gift"></i> Bước 4: Tích điểm & đổi quà</h4>
+          <ul>
+            <li>Người dùng trả lại hộp, quét QR bằng ứng dụng GreenBox để tích điểm.</li>
+            <li>Điểm đổi quà: Voucher, cây xanh, vật phẩm học tập.</li>
+            <li>Tham gia thử thách <i>"Không rác hộp"</i> để tích thêm điểm.</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Bước 5 -->
+      <div class="col-md-12 mb-4">
+        <div style="background:#fff; border:1px solid #ddd; padding:20px; border-radius:12px;">
+          <h4 style="color:#2c7a3f;"><i class="fas fa-recycle"></i> Bước 5: Xử lý hộp lỗi</h4>
+          <p>Hộp <b>Kém</b> được dán mã <code>003</code> để tái chế, hoặc tận dụng làm lớp lót & chống sốc.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+   <!-- Ảnh minh họa tổng thể -->
+    <div class="text-center mt-5">
+      <img src="../hinh/quytrinh.png" alt="Quy trình GreenBox" class="img-fluid rounded shadow">
+      <p class="mt-2 text-muted"><i>Ảnh minh họa quy trình 5 bước của GreenBox</i></p>
+    </div>
+  </div>
+</section>
+
+
+<!--footer cuối trang-->
+  <footer>
+    <div class="top"></div>
+    </div>
+    </div>
+    <div class="footer-container">
+      <div class="footer1">
+        <h6><strong>Giới thiệu GreenBox</strong></h6>
+        <p><strong>Tên công ty:</strong>GREENBOX</p>
+        <p><strong></strong>"Chúng tôi là đơn vị tiên phong trong thu gom, phân loại và tái sử dụng giấy tại Việt Nam. Sứ
+          mệnh của chúng tôi là giảm thiểu rác thải, tiết kiệm tài nguyên thiên nhiên và mang lại môi trường sống trong
+          lành cho các thế hệ mai sau."
+        </p>
+        <p>♻ Hơn <strong>5.000 tấn giấy</strong> được tái chế mỗi năm</p>
+        <p>🌳 Góp phần cứu <strong>85.000 cây xanh</strong> </p>
+        <p><strong>🔄 100% carton sau thu gom được xử lý an toàn & tái sử dụng</strong> </p>
+        <p>🤝 Hợp tác với <strong>doanh nghiệp, trường học, hộ gia đình</strong> để xây dựng thói quen phân loại và tái chế </p>
+      </div>
+
+      <div class="footer2">
+        <h6><strong>Thông tin</strong></h6>
+        <p><strong>Địa chỉ trụ sở chính:</strong></p>
+        <p><strong>Nhà máy / Kho xử lý:</strong> bởi Sở KH&ĐT</p>
+        <p><strong>hotline 24/7:</strong> 0327378469 - 0368315830</p>
+        <p><strong>Email:</strong>greenbox.ct@gmail.com</p>
+        <p><strong>Giờ làm việc:</strong></p>
+      </div>
+
+      <div class="footer3">
+        <h6><strong>Chứng nhận & Tiêu chuẩn</strong></h6>
+        <p><strong>FSC: </strong> Nguồn giấy bền vững</p>
+        <p><strong>ISO 14001: </strong> Quản lý môi trường</p>
+        <p><strong>Nhãn xanh Việt Nam</strong></p>
+        <img src="../hinh/Nhanxanh.jpg" alt="Đã thông báo Bộ Công Thương" width="150">
+      </div>
+
+      <div class="footer4">
+        <h6><strong>Liên Hệ</strong></h6>
+        <p>Email: <strong> greenbox.ct@gmail.com</strong></p>
+        <p>Hotline: <strong>0327378469 - 0368315830</strong></p>
+        <p>Fanpage: <a href="#" target="_blank">Facebook</a></p>
+      </div>
+
+      <div class="footer5">
+        <h6>Đây là ô footer5 đã bị gộp với footer1</h6>
+        <p>Nội dung này sẽ không hiển thị vì đã bị gộp với footer1.</p>
+      </div>
+
+      <div class="footer6">
+        <h6>
+          <p><strong>Kết Nối Với Chúng Tôi</strong></p>
+        </h6>
+        <img src="../hinh/fb.jfif" width="50">
+        <img src="../hinh/ytb1.jfif" width="50">
+        <img src="../hinh/ggmap.jfif" width="50">
+      </div>
+
+      <div class="footer7">
+        <h6><strong>Dịch vụ tái chế</strong></h6>
+        <p>Thu gom tận nơi, phân loại carton, quy đổi điểm thưởng, tái chế an toàn.</p>
+      </div>
+
+      <div class="footer8">
+        <h6><strong>Ứng Dụng Di Động</strong></h6>
+        <img src="../hinh/gg play.jfif" width="70">
+        <img src="../hinh/app.jfif" width="70">
+      </div>
+    </div>
+  </footer>
+
+</body>
+<script>
+  function toggleMenudienthoai() {
+    var menu = document.getElementById("nav-menu");
+    menu.classList.toggle("nav-active");
+  }
+</script>
+
+</html>

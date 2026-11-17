@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GREENBOX</title>
+    <link rel="stylesheet" type="text/css" href="../css/lienhe.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+<link rel="stylesheet" href="https://unpkg.com/leaflet-routing-machine/dist/leaflet-routing-machine.css" />
+<script src="https://unpkg.com/leaflet-routing-machine/dist/leaflet-routing-machine.js"></script>
+
+<style>
+   #map {
+    height: 400px;
+    width: 100%;
+    border-radius: 10px;
+    margin: 20px auto;
+  }
+  @media (max-width: 768px) { 
+  .leaflet-routing-container {
+    font-size: 12px !important;  /* chữ nhỏ lại */
+    max-height: 120px !important; /* bảng ngắn hơn */
+    overflow-y: auto; /* cuộn nếu nhiều hướng dẫn */
+    width: 160px !important; /* bảng hẹp lại */
+  }
+}
+
+</style>
+</head>
+<body>
+  <!-- Thanh xanh trên cùng -->
+  <div class="top-bar">
+    <div class="left">
+      <span>Hotline: <strong>1900 1177</strong></span>
+      <div class="top-right">
+      </div>
+    </div>
+  </div>
+
+  <!-- Header chính màu trắng -->
+  <header class="main-header">
+    <div class="logo-container">
+      <a href="../index.html">
+        <img src="../hinh/logo1.png" alt="VinhLong Tourism Logo" class="logo">
+      </a>
+      <a class="greenbox-link"><i>GREENBOX</i></a>
+    </div>
+    <!-- Nút menu ☰ chỉ hiển thị trên điện thoại -->
+    <button class="menudienthoai-toggle" onclick="toggleMenudienthoai()">☰</button>
+
+    <!-- Thanh menu -->
+    <nav id="nav-menu">
+      <a href="gioithieu.html"> <i class="fas fa-info-circle"></i> GIỚI THIỆU</a>
+      <a href="tintuc.html"><i class="fas fa-newspaper"></i> TIN TỨC</a>
+      <a href="lienhe.html" style="color: #3200fbff;"> <i class="fas fa-phone"></i> LIÊN HỆ</a>
+      <a href="timhieungay.html"> <i class="fas fa-search"></i> TÌM HIỂU NGAY</a>
+    </nav>
+  </header>
+<section id="contact-info" style="background:#f9fdf9; padding:60px 0;">
+  <div class="container" style="max-width:900px; margin:auto;">
+    <h2 style="text-align:center; color:#2c7a3f; margin-bottom:40px;">📍 Thông tin liên hệ GreenBox</h2>
+
+    <div class="row text-center">
+      <!-- Tên & Doanh nghiệp -->
+      <div class="col-md-3 mb-4">
+        <div style="background:#fff; border:1px solid #e0e0e0; padding:20px; border-radius:12px; height:100%;">
+          <i class="fas fa-building fa-2x" style="color:#2c7a3f; margin-bottom:10px;"></i>
+          <h5>Doanh nghiệp</h5>
+          <p><strong>GREENBOX</strong></p>
+        </div>
+      </div>
+
+      <!-- Email -->
+      <div class="col-md-3 mb-4">
+        <div style="background:#fff; border:1px solid #e0e0e0; padding:20px; border-radius:12px; height:100%;">
+          <i class="fas fa-envelope fa-2x" style="color:#2c7a3f; margin-bottom:10px;"></i>
+          <h5>Email</h5>
+          <p>greenbox.ct@gmail.com</p>
+        </div>
+      </div>
+
+      <!-- Số điện thoại -->
+      <div class="col-md-3 mb-4">
+        <div style="background:#fff; border:1px solid #e0e0e0; padding:20px; border-radius:12px; height:100%;">
+          <i class="fas fa-phone fa-2x" style="color:#2c7a3f; margin-bottom:10px;"></i>
+          <h5>Hotline</h5>
+          <p>0327 378 469<br>0368 315 830</p>
+        </div>
+      </div>
+
+      <!-- Địa chỉ -->
+      <div class="col-md-3 mb-4">
+        <div style="background:#fff; border:1px solid #e0e0e0; padding:20px; border-radius:12px; height:100%;">
+          <i class="fas fa-map-marker-alt fa-2x" style="color:#2c7a3f; margin-bottom:10px;"></i>
+          <h5>Địa chỉ</h5>
+          <p>Cần Thơ, Việt Nam</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="contact-map" style="padding:60px 0; background:#fff;">
+  <div class="container" style="max-width:1000px; margin:auto;">
+    <h2 style="text-align:center; color:#2c7a3f; margin-bottom:30px;">🗺️ Vị trí của chúng tôi</h2>
+
+    <!-- Bản đồ Leaflet -->
+    <div id="map" style="width:100%; height:450px; border:2px solid #2c7a3f; border-radius:12px; overflow:hidden;"></div>
+  </div>
+</section>
+
+
+<!--footer cuối trang-->
+  <footer>
+    <div class="top"></div>
+    </div>
+    </div>
+    <div class="footer-container">
+      <div class="footer1">
+        <h6><strong>Giới thiệu GreenBox</strong></h6>
+        <p><strong>Tên công ty:</strong>GREENBOX</p>
+        <p><strong></strong>"Chúng tôi là đơn vị tiên phong trong thu gom, phân loại và tái sử dụng giấy tại Việt Nam. Sứ
+          mệnh của chúng tôi là giảm thiểu rác thải, tiết kiệm tài nguyên thiên nhiên và mang lại môi trường sống trong
+          lành cho các thế hệ mai sau."
+        </p>
+        <p>♻ Hơn <strong>5.000 tấn giấy</strong> được tái chế mỗi năm</p>
+        <p>🌳 Góp phần cứu <strong>85.000 cây xanh</strong> </p>
+        <p><strong>🔄 100% carton sau thu gom được xử lý an toàn & tái sử dụng</strong> </p>
+        <p>🤝 Hợp tác với <strong>doanh nghiệp, trường học, hộ gia đình</strong>để xây dựng thói quen phân loại và tái chế </p>
+      </div>
+
+      <div class="footer2">
+        <h6><strong>Thông tin</strong></h6>
+        <p><strong>Địa chỉ trụ sở chính:</strong></p>
+        <p><strong>Nhà máy / Kho xử lý:</strong> bởi Sở KH&ĐT</p>
+        <p><strong>hotline 24/7:</strong> 0327378469 - 0368315830</p>
+        <p><strong>Email:</strong>greenbox.ct@gmail.com</p>
+        <p><strong>Giờ làm việc:</strong></p>
+      </div>
+
+      <div class="footer3">
+        <h6><strong>Chứng nhận & Tiêu chuẩn</strong></h6>
+        <p><strong>FSC: </strong> Nguồn giấy bền vững</p>
+        <p><strong>ISO 14001: </strong> Quản lý môi trường</p>
+        <p><strong>Nhãn xanh Việt Nam</strong></p>
+        <img src="../hinh/Nhanxanh.jpg" alt="Đã thông báo Bộ Công Thương" width="150">
+      </div>
+
+      <div class="footer4">
+        <h6><strong>Liên Hệ</strong></h6>
+        <p>Email: <strong> greenbox.ct@gmail.com</strong></p>
+        <p>Hotline: <strong>0327378469 - 0368315830</strong></p>
+        <p>Fanpage: <a href="#" target="_blank">Facebook</a></p>
+      </div>
+
+      <div class="footer5">
+        <h6>Đây là ô footer5 đã bị gộp với footer1</h6>
+        <p>Nội dung này sẽ không hiển thị vì đã bị gộp với footer1.</p>
+      </div>
+
+      <div class="footer6">
+        <h6>
+          <p><strong>Kết Nối Với Chúng Tôi</strong></p>
+        </h6>
+        <img src="../hinh/fb.jfif" width="50">
+        <img src="../hinh/ytb1.jfif" width="50">
+        <img src="../hinh/ggmap.jfif" width="50">
+      </div>
+
+      <div class="footer7">
+        <h6><strong>Dịch vụ tái chế</strong></h6>
+        <p>Thu gom tận nơi, phân loại carton, quy đổi điểm thưởng, tái chế an toàn.</p>
+      </div>
+
+      <div class="footer8">
+        <h6><strong>Ứng Dụng Di Động</strong></h6>
+        <img src="../hinh/gg play.jfif" width="70">
+        <img src="../hinh/app.jfif" width="70">
+      </div>
+    </div>
+  </footer>
+
+</body>
+<script>
+  function toggleMenudienthoai() {
+    var menu = document.getElementById("nav-menu");
+    menu.classList.toggle("nav-active");
+  }
+</script>
+
+</html>
+<script>
+  
+  // Khởi tạo bản đồ tại Cần Thơ
+  var map = L.map('map').setView([10.1220631,105.5944271], 11);
+
+  // Nền bản đồ (sử dụng OpenStreetMap)
+  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      attribution: '© OpenStreetMap contributors'
+  }).addTo(map);
+
+// Tạo các điểm
+var kho = [10.052042, 105.7513083];
+var ctu = [9.9966108,105.7822155];
+var ctut = [10.010271,105.792659];
+var fpt = [10.0013402,105.7712583];
+
+// Kho
+L.marker(kho).addTo(map);
+L.popup({autoClose:false, closeOnClick:false})
+  .setLatLng(kho)
+  .setContent("<b>Kho</b>")
+  .openOn(map);
+
+// CTU
+L.marker(ctu).addTo(map);
+L.popup({autoClose:false, closeOnClick:false})
+  .setLatLng(ctu)
+  .setContent("<b>KDC NAM LONG 2 CẦN THƠ</b>")
+  .openOn(map);
+
+// CTUT
+L.marker(ctut).addTo(map);
+L.popup({autoClose:false, closeOnClick:false})
+  .setLatLng(ctut)
+  .setContent("<b>KHU DÂN CƯ ĐÔ THỊ MỚI HƯNG PHÚ</b>")
+  .openOn(map);
+
+// FPT
+L.marker(fpt).addTo(map);
+L.popup({autoClose:false, closeOnClick:false})
+  .setLatLng(fpt)
+.setContent("<b>Khu dân cư Hồng Loan</b>")
+  .openOn(map);
+
+
+// Đường đi từ Kho → CTU → CTUT → FPT
+L.Routing.control({
+  waypoints: [
+    L.latLng(kho[0], kho[1]),
+    L.latLng(ctu[0], ctu[1]),
+    L.latLng(ctut[0], ctut[1]),
+    L.latLng(fpt[0], fpt[1])
+  ],
+  lineOptions: {
+    styles: [{color: '#ff0000ff', weight: 5}]
+  },
+  createMarker: function() { return null; }, // Giữ nguyên marker đã tạo ở trên
+  addWaypoints: false, // Không cho thêm điểm bằng click
+  draggableWaypoints: false // Không cho kéo
+}).addTo(map);
+
+</script>
